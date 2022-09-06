@@ -1,0 +1,14 @@
+<div class='flex w-full max-h-full'>
+  <div class='flex flex-col w-2/3 py-5 pl-3 pr-5 overflow-hidden bg-white rounded-md shadow-md shadow-theme-shadow'>
+    <!-- Header -->
+    <div class='flex flex-row justify-between pb-5 pl-2'>
+      <span class='text-lg font-semibold'>My Courses</span>
+      <div class='flex flex-row gap-3'>
+        <span class='duration-200 cursor-pointer hover:text-theme-active text-theme-inactive'>Past</span>
+        <span class='underline duration-200 text-theme-active'>Current</span>
+        <span class='duration-200 cursor-pointer hover:text-theme-active text-theme-inactive'>Future</span>
+      </div>
+    </div>
+    <app-course-list [courseList]="courseList$ | async"></app-course-list>
+  </div>
+</div>

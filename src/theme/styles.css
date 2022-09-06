@@ -1,0 +1,55 @@
+/* base */
+@import './tailwindcss/base.css';
+@import './01-base/variables.css';
+@import './01-base/document.css';
+@import './01-base/font.css';
+@import './01-base/heading.css';
+
+/* components */
+@import './tailwindcss/components.css';
+@import './02-components/link.css';
+@import './02-components/button.css';
+
+/* utilities */
+@import './tailwindcss/utilities.css';
+@import './03-utilities/border.css';
+
+
+@layer components {
+  .scrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #4c4bd2 #e7e9fb;
+  }
+
+  .scrollable::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 3px;
+    width: 3px;
+    border-radius: 4px;
+    background: #e7e9fb;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 1s;
+  }
+
+  .scrollable::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #4c4bd2;
+    visibility: hidden;
+    transition: visibility 1s;
+  }
+
+  .scrollable:hover::-webkit-scrollbar {
+    visibility: visible;
+    transition: visibility 1s;
+  }
+
+  .scrollable:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    transition: visibility 1s;
+  }
+
+}

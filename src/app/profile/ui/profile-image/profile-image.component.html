@@ -1,0 +1,11 @@
+<div class="relative avatar placeholder">
+  <div class="rounded-full shadow-md w-36 shadow-theme-shadow bg-blueGray-600 text-neutral-content">
+    <p class="text-5xl font-semibold">{{ profileInitials$ | async }}</p>
+    <div
+      class="absolute font-semibold uppercase bottom-5 -right-4 badge badge-sm"
+      [class]="userRoleColor(currentUserRole$ | async)"
+    >
+      {{ currentUserRole$ | async }}
+    </div>
+  </div>
+</div>
