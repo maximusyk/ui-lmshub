@@ -1,0 +1,19 @@
+<div class="relative w-screen h-screen">
+  <app-spinner></app-spinner>
+  <app-toast-alert></app-toast-alert>
+  <app-layout
+    class="flex flex-row items-center w-full h-full p-5 overflow-hidden bg-theme-primary"
+    *ngIf="isAuthenticate; else notAuthorized"
+  >
+    <router-outlet></router-outlet>
+  </app-layout>
+
+  <ng-template
+    class="flex flex-row items-center w-full h-full p-5 overflow-hidden bg-theme-primary"
+    #notAuthorized
+  >
+    <app-not-auth-layout>
+      <router-outlet></router-outlet>
+    </app-not-auth-layout>
+  </ng-template>
+</div>

@@ -1,0 +1,6 @@
+<!-- Content -->
+<div class='flex flex-row flex-wrap gap-4 p-2 scrollable'>
+  <div *ngFor="let courseItem of courseList">
+    <app-course-item [courseItem]='courseItem'></app-course-item>
+  </div>
+</div>

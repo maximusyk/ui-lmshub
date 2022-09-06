@@ -1,0 +1,8 @@
+<label
+  class="grid duration-300 swap swap-flip place-items-center"
+  [class]="isLightTheme ? 'swap-active' : ''"
+  (click)="toggleTheme()"
+>
+  <ng-icon name="hero-sun" class="text-2xl swap-on"></ng-icon>
+  <ng-icon name="hero-moon" class="text-2xl swap-off"></ng-icon>
+</label>

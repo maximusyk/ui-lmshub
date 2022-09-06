@@ -1,0 +1,22 @@
+<header class="flex flex-row items-center justify-between px-8 py-5">
+  <span class="text-2xl font-semibold drop-shadow-md">Good {{ greeting }}, {{ userToGreet | async }}!</span>
+  <div class="flex flex-row items-center gap-4">
+    <div class="flex flex-row items-center gap-2">
+      <div class="text-xl font-medium duration-300 tooltip tooltip-bottom" data-tip="Switch Theme">
+        <app-icon-wrapper>
+          <app-theme-switch></app-theme-switch>
+        </app-icon-wrapper>
+      </div>
+      <div class="text-xl font-medium duration-300 tooltip tooltip-bottom" data-tip="Notifications">
+        <app-icon-wrapper>
+          <ng-icon name="oct-bell" class="text-xl"></ng-icon>
+        </app-icon-wrapper>
+      </div>
+    </div>
+    <a routerLinkActive routerLink="profile">
+      <app-icon-wrapper>
+        <app-user-avatar></app-user-avatar>
+      </app-icon-wrapper>
+    </a>
+  </div>
+</header>

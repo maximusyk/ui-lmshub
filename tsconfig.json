@@ -1,0 +1,46 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": false,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2020",
+    "module": "es2020",
+    "lib": ["es2020", "dom"],
+    "paths": {
+      // Common
+      "@env/*": ["src/environments/*"],
+      "@shared/*": ["src/app/shared/*"],
+      // Entities
+      "@auth/*": ["src/app/auth/*"],
+      "@chat/*": ["src/app/chat/*"],
+      "@courses/*": ["src/app/courses/*"],
+      "@dashboard/*": ["src/app/dashboard/*"],
+      "@exams/*": ["src/app/exams/*"],
+      "@help/*": ["src/app/help/*"],
+      "@live-classroom/*": ["src/app/live-classroom/*"],
+      "@profile/*": ["src/app/profile/*"],
+      "@schedule/*": ["src/app/schedule/*"],
+      "@system-updates/*": ["src/app/system-updates/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}
