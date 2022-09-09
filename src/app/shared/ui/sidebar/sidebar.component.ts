@@ -9,6 +9,12 @@ import { AppLogoComponent } from '../app-logo/app-logo.component';
 import { ThemeSwitchComponent } from '../theme-switch/theme-switch.component';
 import { INavItem, NavItemComponent } from './nav-item/nav-item.component';
 import { NavListComponent } from './nav-list/nav-list.component';
+import { storage } from '@shared/utils/storage/storage.utils';
+import {
+  MatKeyboardDoubleArrowLeft,
+  MatKeyboardDoubleArrowRight,
+} from '@ng-icons/material-icons/baseline';
+import { BehaviorSubject } from 'rxjs';
 
 const generalNavItems: INavItem[] = [
   {
@@ -86,16 +92,24 @@ const logoutNavItem: INavItem = {
     provideIcons({
       IonLogOutOutline,
       IonLogOut,
+      MatKeyboardDoubleArrowLeft,
+      MatKeyboardDoubleArrowRight,
     }),
   ],
 })
 export class SidebarComponent {
   readonly generalNavItems = generalNavItems;
   readonly logoutNavItem = logoutNavItem;
+  isSidebarCollapsed = storage.getItem('App/sidebarCollapsed');
   actualIcon = this.logoutNavItem.icon;
   isLoading = false;
 
-  constructor(private _router: Router, private _store: Store) {}
+  constructor(private _store: Store) {}
+
+  toggleSidebar(): void {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+    storage.setItem('App/sidebarCollapsed', this.isSidebarCollapsed);
+  }
 
   onClickSignOut(): void {
     this._store.dispatch(logout());

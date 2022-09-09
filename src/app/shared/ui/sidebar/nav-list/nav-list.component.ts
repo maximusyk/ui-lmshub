@@ -11,4 +11,5 @@ import { INavItem, NavItemComponent } from '../nav-item/nav-item.component';
 })
 export class NavListComponent {
   @Input() navItems: INavItem[] = [];
+  @Input() isFullItems: boolean;
 }

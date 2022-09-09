@@ -2,6 +2,8 @@ import { AppTheme } from '../data-access/theme';
 
 export const DEFAULT_BASE_THEME: AppTheme = 'light' as const;
 
+export const DEFAULT_SIDEBAR_COLLAPSED = false as const;
+
 export enum TimeoutEnum {
   SECOND = 1000,
   MINUTE = 60_000, // == 60 * 1000

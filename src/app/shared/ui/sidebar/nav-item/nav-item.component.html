@@ -1,12 +1,22 @@
-<div class="text-xl font-medium duration-300 tooltip tooltip-right" [attr.data-tip]="navItem.label">
-  <a
-    [class]="(rla.isActive ? '' : 'hover:') + 'text-theme-active drop-shadow-md duration-300'"
-    #rla="routerLinkActive"
-    routerLinkActive
-    routerLink="{{ navItem.path }}"
-    (mouseenter)="actualIcon = navItem.iconActive"
-    (mouseleave)="actualIcon = navItem.icon"
-  >
-    <ng-icon class="text-4xl" [name]="rla.isActive ? navItem.iconActive : actualIcon"></ng-icon>
-  </a>
+<div
+    [class]="
+        (isFullItem ? '' : 'tooltip tooltip-right ') +
+        'font-medium transition-all duration-300 pr-7'
+    "
+    [attr.data-tip]="navItem.label"
+>
+    <a
+        [class]="
+            (rla.isActive ? '' : 'hover:') +
+            'text-theme-active drop-shadow-md transition-all duration-300 flex flex-row items-center gap-2'
+        "
+        #rla="routerLinkActive"
+        routerLinkActive
+        routerLink="{{ navItem.path }}"
+        (mouseenter)="actualIcon = navItem.iconActive"
+        (mouseleave)="actualIcon = navItem.icon"
+    >
+        <ng-icon class="text-3xl" [name]="rla.isActive ? navItem.iconActive : actualIcon"></ng-icon>
+        <span *ngIf="isFullItem">{{ navItem.label }}</span>
+    </a>
 </div>

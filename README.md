@@ -15,7 +15,7 @@
 <p align="center">
   <a href="CONTRIBUTING.md">Contributing Guidelines</a>
   ·
-  <a href="https://github.com/juanmesa2097/ui-coursuch/issues">Submit an Issue</a>
+  <a href="https://github.com/juanmesa2097/ui-lmshub/issues">Submit an Issue</a>
   <br>
   <br>
 </p>
@@ -23,48 +23,50 @@
 
 ## ⚗️ Features
 
-- Lazy loading
-- Standalone components
-- OS/Light/Dark modes
-- Strongly-typed storage
-- TailwindCSS
+-   Lazy loading
+-   Standalone components
+-   OS/Light/Dark modes
+-   Strongly-typed storage
+-   TailwindCSS
 
 ## 🛠️ Tweaks
 
-- TailwindCSS configuration:
+-   TailwindCSS configuration:
 
-  You can find the `tailwind.config.js` file in the project root, then you can refer to https://tailwindcss.com/docs/configuration to learn how to make your own adjustments.
+    You can find the `tailwind.config.js` file in the project root, then you can refer to
+    https://tailwindcss.com/docs/configuration to learn how to make your own adjustments.
 
-- Set default theme (first time load)
+-   Set default theme (first time load)
 
-  Go to `src\app\lib\constants.ts` and choose the default theme.
+    Go to `src\app\lib\constants.ts` and choose the default theme.
 
-  OS preference
+    OS preference
 
-  ```ts
-  export const DEFAULT_BASE_THEME: AppTheme = 'system' as const;
-  ```
+    ```ts
+    export const DEFAULT_BASE_THEME: AppTheme = 'system' as const;
+    ```
 
-  Light mode
+    Light mode
 
-  ```ts
-  export const DEFAULT_BASE_THEME: AppTheme = 'light' as const;
-  ```
+    ```ts
+    export const DEFAULT_BASE_THEME: AppTheme = 'light' as const;
+    ```
 
-  Dark mode
+    Dark mode
 
-  ```ts
-  export const DEFAULT_BASE_THEME: AppTheme = 'dark' as const;
-  ```
+    ```ts
+    export const DEFAULT_BASE_THEME: AppTheme = 'dark' as const;
+    ```
 
-- Enable a new local/session storage item
+-   Enable a new local/session storage item
 
-  Go to `src\app\lib\utils\storage\storage.types.ts` and add a new item name in the `StorageObjectType` type and a new key value pair in the `StorageObjectMap` type.
+    Go to `src\app\lib\utils\storage\storage.types.ts` and add a new item name in the
+    `StorageObjectType` type and a new key value pair in the `StorageObjectMap` type.
 
-  ![image](https://user-images.githubusercontent.com/64181348/173276010-a4b95a63-2fe0-4104-9b09-34eeea5f0025.png)
+    ![image](https://user-images.githubusercontent.com/64181348/173276010-a4b95a63-2fe0-4104-9b09-34eeea5f0025.png)
 
-  After that, you can use the new item.
-  ![image](https://user-images.githubusercontent.com/64181348/173276575-09322722-387d-4c20-95af-fa9915079e3a.png)
+    After that, you can use the new item.
+    ![image](https://user-images.githubusercontent.com/64181348/173276575-09322722-387d-4c20-95af-fa9915079e3a.png)
 
 ## ⛩️ Project structure
 

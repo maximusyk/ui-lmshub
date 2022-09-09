@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy } from '@angular/core';
-import { DEFAULT_BASE_THEME } from '@shared/types/general.types';
+import { DEFAULT_BASE_THEME, DEFAULT_SIDEBAR_COLLAPSED } from '@shared/types/general.types';
 import { storage } from '@shared/utils/storage/storage.utils';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { AppTheme } from './theme.config';
@@ -38,6 +38,10 @@ export class ThemeService implements OnDestroy {
 
   init(): void {
     this.setTheme(this._storedTheme || DEFAULT_BASE_THEME);
+    storage.setItem(
+      'App/sidebarCollapsed',
+      storage.getItem('App/sidebarCollapsed') || DEFAULT_SIDEBAR_COLLAPSED
+    );
   }
 
   /**

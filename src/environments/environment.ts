@@ -3,11 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  appName: 'Coursuch',
-  // apiUrl: 'https://coursuch-lms.herokuapp.com/api',
-  apiUrl: 'http://localhost:5000/api',
-  googleClientId: '909492151900-3ismshq21gv53p4lkhukcmg2sqll702e.apps.googleusercontent.com',
+    production: false,
+    appName: 'LMShub',
+    apiUrl: 'https://api-lmshub.herokuapp.com/api',
+    // apiUrl: 'http://localhost:5000/api',
+    googleClientId: '909492151900-3ismshq21gv53p4lkhukcmg2sqll702e.apps.googleusercontent.com',
 };
 
 /*

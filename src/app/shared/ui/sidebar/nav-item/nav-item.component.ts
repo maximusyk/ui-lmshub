@@ -9,7 +9,7 @@ import {
   HeroClipboardCheck,
   HeroCloudUpload,
   HeroHome,
-  HeroQuestionMarkCircle
+  HeroQuestionMarkCircle,
 } from '@ng-icons/heroicons/outline';
 import {
   HeroBookOpenSolid,
@@ -18,10 +18,11 @@ import {
   HeroClipboardCheckSolid,
   HeroCloudUploadSolid,
   HeroHomeSolid,
-  HeroQuestionMarkCircleSolid
+  HeroQuestionMarkCircleSolid,
 } from '@ng-icons/heroicons/solid';
 import { MatCameraIndoor } from '@ng-icons/material-icons/baseline';
 import { MatCameraIndoorOutline } from '@ng-icons/material-icons/outline';
+import { storage } from '@shared/utils/storage/storage.utils';
 
 export interface INavItem {
   label: string;
@@ -64,7 +65,9 @@ export class NavItemComponent implements OnInit {
     icon: '',
     iconActive: '',
   };
+  @Input() isFullItem: boolean;
   actualIcon = this.navItem.icon;
+  isSidebarCollapsed = storage.getItem('App/sidebarCollapsed');
   ngOnInit() {
     if (this.navItem.icon) {
       this.actualIcon = this.navItem.icon;

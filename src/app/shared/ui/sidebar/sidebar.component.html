@@ -1,31 +1,37 @@
-<div>
-  <div
-    class="flex flex-col items-center text-4xl gap-10 px-4 py-14 shadow-lg shadow-theme-shadow bg-gradient-to-r from-theme-sidebar-from to-theme-sidebar-to rounded-tl-[20rem] rounded-bl-[20rem]"
-  >
-    <div>
-      <app-logo data-tooltip-target="logo-tooltip" data-tooltip-placement="right"></app-logo>
-    </div>
-    <app-nav-list [navItems]="generalNavItems"></app-nav-list>
-    <div class="text-xl font-medium duration-300 tooltip tooltip-right" [attr.data-tip]="logoutNavItem.label">
-      <label
-        role="button"
-        for="confirm-logout-modal"
-        class="duration-300 modal-button hover:text-theme-active drop-shadow-md"
-        (mouseenter)="actualIcon = logoutNavItem.iconActive"
-        (mouseleave)="actualIcon = logoutNavItem.icon"
-      >
-        <ng-icon class="text-4xl" [name]="actualIcon"></ng-icon>
-      </label>
-    </div>
+<div class="relative flex flex-col h-screen gap-10 py-3 pl-5 text-lg bg-sky-100 items-left">
+  <span class="absolute z-50 top-6 -right-3 swap swap-flip" role="button" (click)="toggleSidebar()">
+    <input type="checkbox" [checked]="isSidebarCollapsed" />
+    <ng-icon class="text-2xl swap-on" name="matKeyboardDoubleArrowRight"></ng-icon>
+    <ng-icon class="text-2xl swap-off" name="matKeyboardDoubleArrowLeft"></ng-icon>
+  </span>
+  <div>
+    <app-logo [isFullLogo]="!isSidebarCollapsed"></app-logo>
   </div>
+  <app-nav-list [isFullItems]="!isSidebarCollapsed" [navItems]="generalNavItems"></app-nav-list>
+  <div class="font-medium duration-300 tooltip tooltip-right" [attr.data-tip]="logoutNavItem.label">
+    <label
+      role="button"
+      for="confirm-logout-modal"
+      class="flex flex-row items-center gap-2 duration-300 modal-button hover:text-theme-active drop-shadow-md"
+      (mouseenter)="actualIcon = logoutNavItem.iconActive"
+      (mouseleave)="actualIcon = logoutNavItem.icon"
+    >
+      <ng-icon class="text-3xl" [name]="actualIcon"></ng-icon>
+      <span *ngIf="!isSidebarCollapsed">{{ logoutNavItem.label }}</span>
+    </label>
+  </div>
+  <label for="drawer" class="drawer-overlay"></label>
 </div>
 <input type="checkbox" id="confirm-logout-modal" class="modal-toggle" />
 <label for="confirm-logout-modal" class="cursor-pointer modal">
-  <label class="relative text-center modal-box" for="">
+  <label class="relative text-center modal-box bg-theme-secondary" for="">
     <span class="text-lg font-semibold">Are you sure you want to sign out?</span>
     <div class="justify-center modal-action">
       <label for="confirm-logout-modal" class="font-semibold btn btn-warning">No</label>
-      <label for="confirm-logout-modal" class="font-semibold btn btn-success" (click)="onClickSignOut()"
+      <label
+        for="confirm-logout-modal"
+        class="font-semibold btn btn-accent"
+        (click)="onClickSignOut()"
         >Yes</label
       >
     </div>

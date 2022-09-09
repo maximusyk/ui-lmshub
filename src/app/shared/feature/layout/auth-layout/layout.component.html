@@ -1,10 +1,15 @@
-<app-sidebar></app-sidebar>
-<div
-  class="flex flex-col w-full h-full divide-y-2 divide-white shadow-lg shadow-theme-shadow rounded-2xl bg-theme-secondary"
->
-  <app-header></app-header>
-  <div class='overflow-hidden p-7'>
-    <ng-content></ng-content>
+<div class="drawer drawer-mobile">
+  <input id="drawer" name="drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
+    <div
+      class="flex flex-col flex-grow h-screen divide-y-2 divide-white rounded-2xl bg-theme-secondary"
+    >
+      <app-header></app-header>
+      <div class="overflow-hidden p-7">
+        <ng-content></ng-content>
+      </div>
+    </div>
   </div>
+  <app-sidebar></app-sidebar>
+  <app-spinner></app-spinner>
 </div>
-<app-spinner></app-spinner>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,4 +9,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './app-logo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppLogoComponent {}
+export class AppLogoComponent {
+  @Input() isFullLogo: boolean;
+}

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { getCurrentUser } from '@auth/data-access/state/users/users.selectors';
+import { BootstrapList } from '@ng-icons/bootstrap-icons';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { HeroMoon, HeroSun } from '@ng-icons/heroicons/outline';
 import { OctBell, OctBellFill } from '@ng-icons/octicons';
@@ -33,6 +34,7 @@ import { UserAvatarComponent } from './ui/user-avatar/user-avatar.component';
       OctBellFill,
       HeroSun,
       HeroMoon,
+      BootstrapList,
     }),
   ],
 })
@@ -53,7 +55,7 @@ export class HeaderComponent implements OnInit {
   greeting = '';
   userToGreet: Observable<string> = this._store
     .pipe(select(getCurrentUser))
-    .pipe(map((user) => user?.firstName || user?.lastName || user?.username || 'Stranger'));
+    .pipe(map(user => user?.firstName || user?.lastName || user?.username || 'Stranger'));
 
   ngOnInit() {
     this.setGreeting(new Date().getHours());

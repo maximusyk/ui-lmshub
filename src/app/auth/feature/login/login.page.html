@@ -10,11 +10,7 @@
           <label class="block mb-2 text-sm font-medium text-gray-700" for="username"> Email address </label>
           <input
             class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border border-gray-400 rounded shadow-md appearance-none shadow-theme-shadow focus:outline-none focus:border-theme-active"
-            id="email"
-            formControlName="email"
-            type="text"
-            placeholder="user@example.com"
-          />
+            id="email" formControlName="email" type="text" placeholder="user@example.com" />
         </div>
         <div class="relative mb-6">
           <label class="block mb-2 text-sm font-medium text-gray-700" for="username"> Password </label>
@@ -24,18 +20,12 @@
           </span>
           <input
             class="w-full px-3 py-2 text-sm leading-tight text-gray-600 border border-gray-400 rounded shadow-md appearance-none shadow-theme-shadow focus:outline-none focus:border-indigo-300"
-            id="password"
-            formControlName="password"
-            [type]="isPasswordVisible ? 'text' : 'password'"
-            placeholder="••••••••••"
-          />
+            id="password" formControlName="password" [type]="isPasswordVisible ? 'text' : 'password'"
+            placeholder="••••••••••" />
         </div>
         <div class="mb-6">
-          <button
-            type="submit"
-            (click)="handleLocalSignIn()"
-            class="w-full px-0 py-3 text-sm font-semibold text-center text-white transition-all duration-200 bg-indigo-500 rounded shadow-md shadow-theme-shadow hover:bg-theme-active hover:bg-tertiary"
-          >
+          <button type="submit" (click)="handleLocalSignIn()"
+            class="w-full px-0 py-3 text-sm font-semibold text-center text-white transition-all duration-200 rounded shadow-md bg-theme-inactive shadow-theme-shadow hover:bg-theme-active hover:bg-tertiary">
             Sign in
           </button>
         </div>
@@ -46,24 +36,17 @@
         <hr class="border-gray-400 grow" />
       </div>
       <div class="grid grid-cols-3 gap-2">
-        <button
-          type="button"
-          (click)="handleSocialSignIn('google')"
-          class="relative grid w-full py-[.5rem] font-semibold text-gray-600 transition-all duration-300 border border-gray-400 border-solid rounded shadow-sm place-items-center focus:outline-none hover:border-theme-active hover:text-theme-active hover:shadow-theme-active"
-        >
-          <cool-google-button color="dark"> Login with Google </cool-google-button>
-          <!-- <ng-icon name="bootstrap-google" class="text-lg" style="line-height: 28px"></ng-icon> -->
+        <button type="button" (click)="handleSocialSignIn('google')"
+          class="relative grid w-full py-[.5rem] font-semibold text-gray-600 transition-all duration-300 border border-gray-400 border-solid rounded shadow-sm place-items-center focus:outline-none hover:border-theme-active hover:text-theme-active hover:shadow-theme-active">
+          <!-- <cool-google-button color="dark"> Login with Google </cool-google-button> -->
+          <ng-icon name="bootstrap-google" class="text-lg" style="line-height: 28px"></ng-icon>
         </button>
-        <button
-          type="button"
-          class="relative grid w-full font-semibold text-gray-600 transition-all duration-300 border border-gray-400 border-solid rounded shadow-sm place-items-center focus:outline-none hover:border-theme-active hover:text-theme-active hover:shadow-theme-active"
-        >
+        <button type="button"
+          class="relative grid w-full font-semibold text-gray-600 transition-all duration-300 border border-gray-400 border-solid rounded shadow-sm place-items-center focus:outline-none hover:border-theme-active hover:text-theme-active hover:shadow-theme-active">
           <ng-icon name="bootstrap-facebook" class="text-lg" style="line-height: 28px"></ng-icon>
         </button>
-        <button
-          type="button"
-          class="relative grid w-full font-semibold text-gray-600 transition-all duration-300 border border-gray-400 border-solid rounded shadow-sm place-items-center focus:outline-none hover:border-theme-active hover:text-theme-active hover:shadow-theme-active"
-        >
+        <button type="button"
+          class="relative grid w-full font-semibold text-gray-600 transition-all duration-300 border border-gray-400 border-solid rounded shadow-sm place-items-center focus:outline-none hover:border-theme-active hover:text-theme-active hover:shadow-theme-active">
           <ng-icon name="bootstrap-github" class="text-lg" style="line-height: 28px"></ng-icon>
         </button>
       </div>
